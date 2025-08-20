@@ -15,9 +15,8 @@ body{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+    background: linear-gradient(to bottom, #FFFFFF, #A8E6CF);
 }
-
 nav{
     width: 100%;
     height: 10vh;
@@ -40,8 +39,8 @@ nav{
 }
 
 .logo span{
-    color: rgb(109,67, 0);
-    text-shadow: 0 0 10px rgb(109,67, 0);
+    color: rgb(86, 152, 86);
+    text-shadow: 0 0 10px rgb(22, 169, 95);
 }
 
 .hamburg, .cancel{
@@ -78,7 +77,7 @@ nav{
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: rgb(109,67, 0);
+    background-color: #D0F0C0;
     transition: 0.2s linear;
 }
 
@@ -90,7 +89,7 @@ nav{
     background-color: transparent;
     padding: 5px 20px;
     border-radius: 20px;
-    border: 2px solid rgb(109,67, 0);
+    border: 2px solid rgb(144, 207, 171);
     transition: 0.2s linear;
 }
 
@@ -100,12 +99,12 @@ nav{
 }
 
 .nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
-    background-color: rgb(109,67, 0);
+    background-color: #A8E6CF;
     color: white;
 }
 
 .nav-container .links a:hover{
-    color: rgb(109,67, 0);
+    color: #8dc3af;
 }
 
 .dropdown{
@@ -131,7 +130,7 @@ nav{
 }
 
 .dropdown .links a:hover{
-    background-color: rgb(109,67, 0);
+    background-color:#A8E6CF;
 }
 
 section{
@@ -173,8 +172,8 @@ section{
 }
 
 .content h1 span{
-    color: rgb(109,67, 0);
-    text-shadow: 0 0 10px rgb(109,67, 0);
+    color: rgb(86, 152, 86);
+    text-shadow: 0 0 10px rgb(22, 169, 95);
 }
 
 
@@ -193,9 +192,9 @@ section{
     width: 3rem;
     height: 3rem;
     background-color:transparent;
-    border: 0.2rem solid rgb(109,67, 0);
+    border: 0.2rem solid rgb(86, 152, 86);
     border-radius: 50%;
-    color:rgb(109,67, 0);
+    color:rgb(86, 152, 86);
     margin: 5px 10px;
     font-size: 1.5rem;
     transition: 0.2s linear;
@@ -204,15 +203,15 @@ section{
 .social-links i:hover{
     scale: 1.3;
     color: white;
-    background-color: rgb(109,67, 0);
-    filter: drop-shadow(0 0 10px rgb(109,67,0));
+    background-color: #A8E6CF;
+    filter: drop-shadow(0 0 10px rgb(22, 169, 95));
 }
 
 .content button{
     width: 40%;
     height: 6vh;
     margin: 30px;
-    background-color: rgb(109,67, 0);
+    background-color: rgb(86, 152, 86);
     color: white;
     border: none;
     outline: none;
@@ -224,11 +223,11 @@ section{
 
 .content button:hover{
  scale: 1.1;
- color: rgb(109,67, 0);
- border: 2px solid rgb(109,67, 0);
+ color: rgb(0, 109, 49);
+ border: 2px solid rgb(86, 152, 86);
  background-color: transparent;
  font-weight: 700;
- box-shadow: 0 0 40px rgb(109,67, 0);
+ box-shadow: 0 0 40px rgb(22, 169, 95);
 }
 
 @media (max-width:884px) {
@@ -280,10 +279,10 @@ section{
 .container {
   max-width: 900px;
   margin: auto;
-  background: rgb(254, 236, 215);
-  padding: 40px;
+  background: #F0FFF4;
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgb(22, 169, 95);
 }
 
 h1, h2 {
@@ -294,11 +293,15 @@ h1, h2 {
 #h1 {
   text-align: center;
 }
+#h2{
+  text-align: center;
+}
 
 h2 {
   margin-top: 40px;
   font-size: 24px;
   color: #444;
+  text-align: justify;
 }
 
 p {
@@ -316,7 +319,7 @@ p {
             width: 80%;
             max-width: 800px;
             text-align: center;
-            padding: 20px;
+            padding-bottom: 20px;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -338,7 +341,7 @@ p {
         }
 
         .blog-link:hover {
-           color: rgb(109,67, 0);
+           color: rgb(0, 109, 49);
      
       
       font-weight: 700;
@@ -346,10 +349,21 @@ p {
         }
 
 
-/*contact pg*/
 
- button {
-      background-color: rgb(109,67, 0);
+
+    /*contact me pg*/
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid rgb(86, 152, 86);
+      border-radius: 6px;
+      box-sizing: border-box;
+      background-color: #d0f3e6;
+    }
+    button {
+      background-color: rgb(86, 152, 86);
       color: white;
       padding: 12px 20px;
       border: none;
@@ -358,14 +372,14 @@ p {
       
       font-weight: 700;
       
-      
+      display: inline-block;
     }
     button:hover {
-      color: rgb(109,67, 0);
-      border: 2px solid rgb(109,67, 0);
-      background-color: burlywood;
+      color: rgb(0, 109, 49);
+      border: 2px solid rgb(86, 152, 86);
+      background-color: transparent;
       font-weight: 700;
-      box-shadow: 0 0 40px rgb(109,67, 0);    
+      box-shadow: 0 0 40px rgb(22, 169, 95);    
     }
 
     #success-message {
