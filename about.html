@@ -3,25 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
   <title>About Me</title>
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+
+    .nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    text-align: right;
+    
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    transform: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #D0F0C0;
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .contact-btn{
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(144, 207, 171);
+    transition: 0.2s linear;
+}
+
+.nav-container .contact-btn a{
+    color: white;
+    transition: 0.3s linear;
+}
+
+.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
+    background-color: #A8E6CF;
+    color: white;
+}
+
+.nav-container .links a:hover{
+    color: #8dc3af;
+}
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    color: white;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color:#A8E6CF;
+}
+  </style>
 </head>
 <body>
+<nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                
+            </div>
+            <!--navigation bar-->
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="blog.html">Blogs</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="contact.html">Contact Me</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <!--navigation bar when it is responsive-->
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blogs</a>
+                <a href="contact.html">Contact Me </a>
+                
+            </div>
+        </div>
+    </nav>
+
 
   <div class="container">
     <h1 id="h1">About Me</h1>
+    <h2>Education</h2>
     <p>
       I'm a passionate undergraduate student at the University of Moratuwa, Faculty of Information Technology.
       I enjoy exploring the world of software development, web technologies, and digital innovation.
       I'm always eager to learn new skills, take on challenges, and grow as a future IT professional.
     </p>
-
-    <h2>Education</h2>
-    <p>
-      I'm currently pursuing my Bachelor of Information Technology and Management at the University of Moratuwa.
-      This program has helped me gain knowledge in programming, databases, system design, and software engineering principles.
-    </p>
-
     <h2>Goals</h2>
     <p>
       My goal is to become a Project Manager and contribute to real-world projects that make a difference.
@@ -33,10 +162,11 @@
       In addition to that, I value teamwork, communication, time management, and adaptability.
       I'm very motivated in continuous learning, to improve myself.
     </p>
-    <a href="index.html"><button>Back</button></a>
+    
   </div>
   
 
 </body>
 </html>
+
 
