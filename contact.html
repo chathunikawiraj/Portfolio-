@@ -4,71 +4,146 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Page</title>
+  <link rel="stylesheet" href="style.css" />
+
   <style>
-    body {
-    font-family: Arial, sans-serif;
-    
-    padding: 20px;
+    nav{
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+    height: 10vh;
+    position: sticky;
+}
 
-    }
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: rgb(254, 236, 215);      
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border: 1px solid rgb(254, 236, 215);
-      border-radius: 6px;
-      box-sizing: border-box;
-      background-color: rgb(249, 202, 133);
-    }
-    button {
-      background-color: rgb(109,67, 0);
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      
-      font-weight: 700;
-      
-      display: inline-block;
-    }
-    button:hover {
-      color: rgb(109,67, 0);
-      border: 2px solid rgb(109,67, 0);
-      background-color: burlywood;
-      font-weight: 700;
-      box-shadow: 0 0 40px rgb(109,67, 0);    
-    }
 
-    #success-message {
-      color: green;
-      text-align: center;
-      display: none;
-      margin-top: 15px;
-    }
-  </style>
+    .nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    text-align: right;
+    
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    transform: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #D0F0C0;
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .contact-btn{
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(144, 207, 171);
+    transition: 0.2s linear;
+}
+
+.nav-container .contact-btn a{
+    color: white;
+    transition: 0.3s linear;
+}
+
+.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
+    background-color: #A8E6CF;
+    color: white;
+}
+
+.nav-container .links a:hover{
+    color: #8dc3af;
+}
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    color: white;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color:#A8E6CF;
+}
+</style>
+
 </head>
 <body>
+<nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                
+            </div>
+            <!--navigation bar-->
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="blog.html">Blogs</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="contact.html">Contact Me</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <!--navigation bar when it is responsive-->
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blogs</a>
+                <a href="contact.html">Contact Me </a>
+                
+            </div>
+        </div>
+    </nav>
 
   <div class="container">
-    <h2>Contact Me</h2>
+    <h2 id="h2">Contact Me</h2>
     <form id="contactForm">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required />
@@ -80,14 +155,12 @@
       <input type="text" id="subject" name="subject" required />
 
       <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <textarea id="message" name="message" rows="4" required></textarea>
 
       <button type="submit">Send Message</button>
       <button type="reset">Clear Message</button>
       
     </form>
-      <br><br>
-      <a href="index.html"><button>Back</button></a>
     <p id="success-message">Thank you! Your message has been successfully received.</p>
     
   </div>
@@ -99,3 +172,4 @@
 
 </body>
 </html>
+
